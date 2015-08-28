@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         dest: './public/fonts/',
         destCss: './less/',
         options: {
-          font: 'Glyphicons',
+          font: 'glyphicons',
           fontFilename: 'glyphicons',
           types: 'eot,woff,ttf,svg',
           syntax: 'bem',
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          "path/to/result.css": "path/to/source.less"
+          "./public/glodon.css": "./less/bootstrap.basic.less"
         }
       },
       prod: {
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          "path/to/result.css": "path/to/source.less"
+          "./public/glodon.min.css": "./less/bootstrap.basic.less"
         }
       }
     },

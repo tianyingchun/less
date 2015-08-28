@@ -1,0 +1,219 @@
+// Name:                       Icon
+//
+// Description:                Define style for icon
+//
+// We will build ourself iconfonts using opensource webfonts.
+//
+// Component:                `glyph-*`
+//
+// Sub-objects:              `glyph-btn`
+//
+// Modifiers:                `glyph-sm`
+//                           `glyph-md`
+//                           `glyph-lg`
+//                           `glyph-fw`
+//                           `glyph-spin`
+//                           `glyph-pulse`
+//
+// Uses:                     Animation
+//
+// =============================================================================
+
+
+// Variables
+// =============================================================================
+
+@glyph-css-prefix: ~"@{ns}glyph";
+@glyph-version: '4.3.0';
+@glyph-border-color: #eee;
+@glyph-inverse: #fff;
+@glyph-li-width: (30em / 14);
+
+
+/* ==========================================================================
+   Component: Icon
+ ============================================================================ */
+
+/* Font-face
+============================================================================= */
+
+
+// Bordered & Pulled
+// -----------------------------------------------------------------------------
+
+.@{glyph-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border: solid .08em @glyph-border-color;
+  border-radius: .1em;
+}
+
+[class*="@{ns}glyph-"] {
+  &.@{ns}fl {
+    margin-right: .3em;
+  }
+  &.@{ns}fr {
+    margin-left: .3em;
+  }
+}
+
+
+// Size modifiers
+// =============================================================================
+
+.@{ns}glyph-sm:before {
+  font-size: @glyph-sm-font-size;
+  vertical-align: @glyph-sm-vertical-align;
+}
+
+.@{ns}glyph-md:before {
+  font-size: @glyph-md-font-size;
+  vertical-align: @glyph-md-vertical-align;
+}
+
+.@{ns}glyph-lg:before {
+  font-size: @glyph-lg-font-size;
+  vertical-align: @glyph-lg-vertical-align;
+}
+
+.glyph-btn-size(@width: 40rem; @height: 40px; @font-size: 20px) {
+  width: @width;
+  height: @height;
+  font-size: @font-size;
+  line-height: @height;
+}
+
+
+/* Modifier: `.am-glyph-btn`
+============================================================================= */
+
+.@{ns}glyph-btn {
+  box-sizing: border-box;
+  display: inline-block;
+  .glyph-btn-size(@glyph-btn-width; @glyph-btn-height; @glyph-btn-font-size);
+  border-radius: @glyph-btn-border-radius;
+  background-color: @glyph-btn-background;
+  color: @glyph-btn-color;
+  text-align: center;
+
+  .hook-glyph-btn;
+  /**
+   * Hover
+   * 1. Apply hover style also to focus state
+   * 2. Remove default focus style
+   */
+  &:hover,
+  &:focus {
+    /* 1 */
+    background-color: @glyph-btn-hover-background;
+    color: @glyph-btn-hover-color;
+    text-decoration: none;
+    outline: none; /* 2 */
+    .hook-glyph-btn-hover;
+  }
+
+  /* Active */
+  &:active {
+    background-color: @glyph-btn-active-background;
+    color: @glyph-btn-active-color;
+    .hook-glyph-btn-active;
+  }
+
+  &.@{ns}primary,
+  &.@{ns}secondary,
+  &.@{ns}success,
+  &.@{ns}warning,
+  &.@{ns}danger {
+    color: @white;
+  }
+
+  &.@{ns}primary {
+    background-color: @global-primary;
+  }
+
+  &.@{ns}secondary {
+    background-color: @global-secondary;
+  }
+
+  &.@{ns}success {
+    background-color: @global-success;
+  }
+
+  &.@{ns}warning {
+    background-color: @global-warning;
+  }
+
+  &.@{ns}danger {
+    background-color: @global-danger;
+  }
+}
+
+.@{ns}glyph-btn-sm {
+  .glyph-btn-size(32px; 32px; 16px);
+}
+
+.@{ns}glyph-btn-lg {
+  .glyph-btn-size(64px; 64px; 28px);
+}
+
+
+/* Modifier: `.am-glyph-fw` Fixed width
+============================================================================= */
+.@{ns}glyph-fw {
+  width: (20em/16);
+  text-align: center;
+}
+
+
+/* Icon mapping within glyphicons.less
+============================================================================= */
+
+
+/* Modifier: `am-glyph-spin`
+============================================================================= */
+
+@keyframes glyph-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+// Animation for glyph icons.
+.glyph-spin {
+  animation: glyph-spin 2s infinite linear;
+}
+
+.glyph-pulse {
+  animation: glyph-spin 1s infinite steps(8);
+}
+
+// List Icons
+// -----------------------------------------------------------------------------
+
+.@{glyph-css-prefix}-ul {
+  padding-left: 0;
+  margin-left: @glyph-li-width;
+  list-style-type: none;
+  > li {
+    position: relative;
+  }
+}
+
+.@{glyph-css-prefix}-li {
+  position: absolute;
+  left: -@glyph-li-width;
+  width: @glyph-li-width;
+  top: (2em / 14);
+  text-align: center;
+}
+
+
+// Hooks
+// =============================================================================
+
+.hook-glyph-btn() {}
+.hook-glyph-btn-hover() {}
+.hook-glyph-btn-active() {}

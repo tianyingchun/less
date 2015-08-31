@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use(compress());
 // the default is "/" capture the static dir as all static resource root.
 app.use("/static", cors(), express.static(path.join(__dirname, './public')));
+app.use("/examples", cors(), express.static(path.join(__dirname, './examples')));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

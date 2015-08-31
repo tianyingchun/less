@@ -7,9 +7,9 @@
 //                    md: 641px <= 1024px
 //                    lg: >1024px
 //
-// Component:       `.am-g`
+// Component:       `.row`
 //
-// Sub-objects:     `.am-u-{point}-{n}`
+// Sub-objects:     `.col-{point}-{n}`
 //
 // =============================================================================
 
@@ -21,7 +21,7 @@
 // =============================================================================
 
 .reset-order(@point) {
-  .@{ns}u-@{point}-reset-order {
+  .@{ns}col-@{point}-reset-order {
     margin-left: 0;
     margin-right: 0;
     left: auto;
@@ -31,7 +31,7 @@
 }
 
 .col-basic() {
-  [class*="@{ns}u-"] {
+  [class*="@{ns}col-"] {
     width: 100%;
     padding-left: @grid-gutter;
     padding-right: @grid-gutter;
@@ -44,7 +44,7 @@
     }
 
     // Not float the last col
-    & + &.@{ns}u-end {
+    & + &.@{ns}col-end {
       float: left;
     }
 
@@ -56,24 +56,24 @@
     }
   }
 
-  // [class*="@{ns}u-pull-"],
-  // [class*="@{ns}u-push-"] {
+  // [class*="@{ns}col-pull-"],
+  // [class*="@{ns}col-push-"] {
   //  position: relative;
   // }
 
-  [class*="@{ns}u-pull-"] {
+  [class*="@{ns}col-pull-"] {
     left: auto;
   }
 
-  [class*="@{ns}u-push-"] {
+  [class*="@{ns}col-push-"] {
     right: auto;
   }
 }
 
 .col-misc(@point) {
-  [class*="@{ns}u-"] {
+  [class*="@{ns}col-"] {
     // 居中的网格
-    &.@{ns}u-@{point}-centered {
+    &.@{ns}col-@{point}-centered {
       margin-left: auto;
       margin-right: auto;
       float: none;
@@ -83,7 +83,7 @@
       }
     }
 
-    &.@{ns}u-@{point}-uncentered {
+    &.@{ns}col-@{point}-uncentered {
       margin-left: 0;
       margin-right: 0;
       float: left;
@@ -98,49 +98,49 @@
 // calc grid: width, push, pull, offset
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = width) and (@i =< @n) {
-  .@{ns}u-@{point}-@{i} {
+  .@{ns}col-@{point}-@{i} {
     width: (@i * 100% / @n);
   }
 }
 
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = push) and (@i = 1) {
-  .@{ns}u-@{point}-push-0 {
+  .@{ns}col-@{point}-push-0 {
     left: 0;
   }
 }
 
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = push) and (@i < @n) {
-  .@{ns}u-@{point}-push-@{i} {
+  .@{ns}col-@{point}-push-@{i} {
     left: @i * (100% / @n);
   }
 }
 
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = pull) and (@i = 1) {
-  .@{ns}u-@{point}-pull-0 {
+  .@{ns}col-@{point}-pull-0 {
     right: 0;
   }
 }
 
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = pull) and (@i < @n) {
-  .@{ns}u-@{point}-pull-@{i} {
+  .@{ns}col-@{point}-pull-@{i} {
     right: @i * (100% / @n);
   }
 }
 
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = offset) and (@i = 1) {
-  .@{ns}u-@{point}-offset-0 {
+  .@{ns}col-@{point}-offset-0 {
     margin-left: 0;
   }
 }
 
 .calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
   (@type = offset) and (@i < @n) {
-  .@{ns}u-@{point}-offset-@{i} {
+  .@{ns}col-@{point}-offset-@{i} {
     margin-left: @i * (100% / @grid-columns);
   }
 }
@@ -164,7 +164,7 @@
 .@{ns}container {
   .grid-container();
 
-  > .@{ns}g {
+  > .@{ns}row {
     width: auto;
     margin-left: -@grid-gutter;
     margin-right: -@grid-gutter;
@@ -176,7 +176,7 @@
   }
 }
 
-.@{ns}g {
+.@{ns}row {
   margin: 0 auto;
   width: 100%;
   .clearfix();
@@ -187,7 +187,7 @@
     margin-right: -@grid-gutter;
     width: auto;
 
-    &.@{ns}g-collapse {
+    &.@{ns}row-collapse {
       margin-left: 0;
       margin-right: 0;
       width: auto;
@@ -200,22 +200,22 @@
     }
   }
 
-  &.@{ns}g-collapse & {
+  &.@{ns}row-collapse & {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 // no padding
-.@{ns}g-collapse {
-  [class*="@{ns}u-"] {
+.@{ns}row-collapse {
+  [class*="@{ns}col-"] {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 // Fixed width row
-.@{ns}g-fixed {
+.@{ns}row-fixed {
   max-width: @grid-max-width;
 }
 

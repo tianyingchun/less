@@ -1,1 +1,1 @@
-### The basic ux style components based on bootstrap less.
+### The less-ui style components based on bootstrap/amazeui.

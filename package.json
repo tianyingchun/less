@@ -1,9 +1,9 @@
 {
-  "name": "react-style",
+  "name": "less-ui",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/tianyingchun/react_style",
-  "description": "The basic ux style components based on bootstrap less.",
+  "homepage": "https://github.com/tianyingchun/less-ui",
+  "description": "The less ui components based on bootstrap/amazeui.",
   "scripts": {
     "start": "node ./bin/www",
     "main": "./bin/www"

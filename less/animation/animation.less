@@ -2,18 +2,18 @@
 //
 // Description:              Useful CSS3 animations
 //
-// Component:                `.am-animation-*`
+// Component:                `.animation-*`
 //
-// Modifiers:                `.am-animation-fade`
-//                           `.am-animation-scale-up`
-//                           `.am-animation-scale-down`
-//                           `.am-animation-slide-top`
-//                           `.am-animation-slide-bottom`
-//                           `.am-animation-slide-left`
-//                           `.am-animation-slide-right`
-//                           `.am-animation-slide-shake`
-//                           `.am-animation-reverse`
-//                           `.am-animation-delay-*`
+// Modifiers:                `.animation-fade`
+//                           `.animation-scale-up`
+//                           `.animation-scale-down`
+//                           `.animation-slide-top`
+//                           `.animation-slide-bottom`
+//                           `.animation-slide-left`
+//                           `.animation-slide-right`
+//                           `.animation-slide-shake`
+//                           `.animation-reverse`
+//                           `.animation-delay-*`
 //
 // Used by:                   Dropdown
 //
@@ -23,7 +23,7 @@
    Component: Aniamtion
  ============================================================================ */
 
-[class*="am-animation-"] {
+[class*="animation-"] {
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
@@ -31,14 +31,14 @@
 
 /* Hide animated element if scrollSpy is used */
 @media screen {
-  .cssanimations [data-am-scrollspy*="animation"] {
+  .cssanimations [data-scrollspy*="animation"] {
     opacity: 0;
   }
 }
 
 /* Fade */
 .@{ns}animation-fade {
-  animation-name: am-fade;
+  animation-name: fade;
   animation-duration: 0.8s;
   animation-timing-function: linear;
 }
@@ -46,51 +46,51 @@
 /* Scale */
 
 .@{ns}animation-scale-up {
-  animation-name: am-scale-up;
+  animation-name: scale-up;
 }
 
 .@{ns}animation-scale-down {
-  animation-name: am-scale-down;
+  animation-name: scale-down;
 }
 
 /* Slide */
 .@{ns}animation-slide-top {
-  animation-name: am-slide-top;
+  animation-name: slide-top;
 }
 
 .@{ns}animation-slide-bottom {
-  animation-name: am-slide-bottom;
+  animation-name: slide-bottom;
 }
 
 .@{ns}animation-slide-left {
-  animation-name: am-slide-left;
+  animation-name: slide-left;
 }
 
 .@{ns}animation-slide-right {
-  animation-name: am-slide-right;
+  animation-name: slide-right;
 }
 
 .@{ns}animation-slide-top-fixed {
-  animation-name: am-slide-top-fixed;
+  animation-name: slide-top-fixed;
 }
 
 /* Shake */
 .@{ns}animation-shake {
-  animation-name: am-shake;
+  animation-name: shake;
 }
 
 /* Spin */
 .@{ns}animation-spin {
-  animation: am-spin 2s infinite linear;
+  animation: spin 2s infinite linear;
 }
 
 /* Spring */
 .@{ns}animation-left-spring {
-  animation: am-left-spring .3s ease-in-out;
+  animation: left-spring .3s ease-in-out;
 }
 
 .@{ns}animation-right-spring {
-  animation: am-right-spring .3s ease-in-out;
+  animation: right-spring .3s ease-in-out;
 }
 
 // Modifiers
@@ -121,7 +121,7 @@
  ============================================================================ */
 
 /* Fade */
-@keyframes am-fade {
+@keyframes fade {
   0% {
     opacity: 0;
   }
@@ -131,7 +131,7 @@
 }
 
 /* Scale up */
-@keyframes am-scale-up {
+@keyframes scale-up {
   0% {
     opacity: 0;
     transform: scale(0.2);
@@ -144,7 +144,7 @@
 }
 
 /* Scale down */
-@keyframes am-scale-down {
+@keyframes scale-down {
   0% {
     opacity: 0;
     transform: scale(1.8);
@@ -157,7 +157,7 @@
 }
 
 /* Slide top */
-@keyframes am-slide-top {
+@keyframes slide-top {
   0% {
     opacity: 0;
     transform: translateY(-100%);
@@ -170,7 +170,7 @@
 }
 
 /* Slide bottom */
-@keyframes am-slide-bottom {
+@keyframes slide-bottom {
   0% {
     opacity: 0;
     transform: translateY(100%);
@@ -183,7 +183,7 @@
 }
 
 /* Slide left */
-@keyframes am-slide-left {
+@keyframes slide-left {
   0% {
     opacity: 0;
     transform: translateX(-100%);
@@ -196,7 +196,7 @@
 }
 
 /* Slide right */
-@keyframes am-slide-right {
+@keyframes slide-right {
   0% {
     opacity: 0;
     transform: translateX(100%);
@@ -209,7 +209,7 @@
 }
 
 /* Shake */
-@keyframes am-shake {
+@keyframes shake {
   0%, 100% {
     transform: translateX(0);
   }
@@ -243,7 +243,7 @@
 }
 
 /* Slide top fixed */
-@keyframes am-slide-top-fixed {
+@keyframes slide-top-fixed {
   0% {
     opacity: 0;
     transform: translateY(-10px);
@@ -256,7 +256,7 @@
 }
 
 /* Slide bottom fixed */
-@keyframes am-slide-bottom-fixed {
+@keyframes slide-bottom-fixed {
   0% {
     opacity: 0;
     transform: translateY(10px);
@@ -269,7 +269,7 @@
 }
 
 /* Spin */
-@keyframes am-spin {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -279,7 +279,7 @@
 }
 
 /* Spring */
-@keyframes am-right-spring {
+@keyframes right-spring {
   0% {
     transform: translateX(0);
   }
@@ -291,7 +291,7 @@
   }
 }
 
-@keyframes am-left-spring {
+@keyframes left-spring {
   0% {
     transform: translateX(0);
   }

@@ -1,9 +1,9 @@
 /*!
- * react-style 1.0.0
- * https://github.com/tianyingchun/react_style
+ * less-ui 1.0.0
+ * https://github.com/tianyingchun/less-ui
  * Copyright (c) 2015  tianyingchun@outlook.com
- * The basic ux style components based on bootstrap less.
- * built on: Mon Aug 31 2015 17:37:22 GMT+0800 (CST)
+ * The less ui components based on bootstrap/amazeui.
+ * built on: Sun Sep 06 2015 10:50:10 GMT+0800 (CST)
  */
 /* ==========================================================================
    Component: Base
@@ -2964,7 +2964,7 @@ fieldset[disabled] .checkbox-inline {
       border-radius: @global-radius;
     }
 
-    > .am-active > a {
+    > .active > a {
       &,
       &:hover,
       &:focus {
@@ -2977,9 +2977,9 @@ fieldset[disabled] .checkbox-inline {
   border-bottom: 1px solid #dddddd;
   border-radius: 0 0 0 0;
 }
-.nav-tabs.nav-justify > .am-active > a,
-.nav-tabs.nav-justify > .am-active > a:hover,
-.nav-tabs.nav-justify > .am-active > a:focus {
+.nav-tabs.nav-justify > .active > a,
+.nav-tabs.nav-justify > .active > a:hover,
+.nav-tabs.nav-justify > .active > a:focus {
   border-bottom-color: #ffffff;
 }
 .nav-justify {
@@ -3280,7 +3280,7 @@ fieldset[disabled] .checkbox-inline {
 .breadcrumb > li {
   display: inline-block;
 }
-.breadcrumb > li [class*="icon-"]:before {
+.breadcrumb > li [class*="glyph-"]:before {
   color: #999999;
   margin-right: 5px;
 }
@@ -3380,6 +3380,253 @@ fieldset[disabled] .checkbox-inline {
 }
 .pagination-right {
   text-align: right;
+}
+/* ==========================================================================
+   Component: Aniamtion
+ ============================================================================ */
+[class*="animation-"] {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+/* Hide animated element if scrollSpy is used */
+@media screen {
+  .cssanimations [data-scrollspy*="animation"] {
+    opacity: 0;
+  }
+}
+/* Fade */
+.animation-fade {
+  animation-name: fade;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+}
+/* Scale */
+.animation-scale-up {
+  animation-name: scale-up;
+}
+.animation-scale-down {
+  animation-name: scale-down;
+}
+/* Slide */
+.animation-slide-top {
+  animation-name: slide-top;
+}
+.animation-slide-bottom {
+  animation-name: slide-bottom;
+}
+.animation-slide-left {
+  animation-name: slide-left;
+}
+.animation-slide-right {
+  animation-name: slide-right;
+}
+.animation-slide-top-fixed {
+  animation-name: slide-top-fixed;
+}
+/* Shake */
+.animation-shake {
+  animation-name: shake;
+}
+/* Spin */
+.animation-spin {
+  animation: spin 2s infinite linear;
+}
+/* Spring */
+.animation-left-spring {
+  animation: left-spring 0.3s ease-in-out;
+}
+.animation-right-spring {
+  animation: right-spring 0.3s ease-in-out;
+}
+.animation-reverse {
+  animation-direction: reverse;
+}
+.animation-paused {
+  animation-play-state: paused !important;
+}
+.animation-delay-1 {
+  animation-delay: 1s;
+}
+.animation-delay-2 {
+  animation-delay: 2s;
+}
+.animation-delay-3 {
+  animation-delay: 3s;
+}
+.animation-delay-4 {
+  animation-delay: 4s;
+}
+.animation-delay-5 {
+  animation-delay: 5s;
+}
+.animation-delay-6 {
+  animation-delay: 6s;
+}
+/* Keyframes
+ ============================================================================ */
+/* Fade */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Scale up */
+@keyframes scale-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Scale down */
+@keyframes scale-down {
+  0% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Slide top */
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Slide bottom */
+@keyframes slide-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Slide left */
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Slide right */
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Shake */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-9px);
+  }
+  20% {
+    transform: translateX(8px);
+  }
+  30% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(4px);
+  }
+  70% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  90% {
+    transform: translateX(-1px);
+  }
+}
+/* Slide top fixed */
+@keyframes slide-top-fixed {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Slide bottom fixed */
+@keyframes slide-bottom-fixed {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Spin */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* Spring */
+@keyframes right-spring {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-spring {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 /* ==========================================================================
    Component: Article
@@ -3908,8 +4155,8 @@ a.badge:focus {
 .btn-group .active .dropdown-toggle {
   outline: 0;
 }
-[data-am-button] > .btn > input[type="radio"],
-[data-am-button] > .btn > input[type="checkbox"],
+[data-button] > .btn > input[type="radio"],
+[data-button] > .btn > input[type="checkbox"],
 .btn-group-check > .btn > input[type="radio"],
 .btn-group-check > .btn > input[type="checkbox"] {
   position: absolute;
@@ -3939,7 +4186,7 @@ a.badge:focus {
   opacity: .5;
   outline: none;
 }
-.close[class*="icon-"] {
+.close[class*="glyph-"] {
   font-size: 16px;
 }
 button.close {
@@ -3973,8 +4220,8 @@ a.close:hover {
 }
 @font-face {
   font-family: "glyphicons";
-  src: url("common/fonts/glyphicons.eot?4a54c44721891dcb1880dbd45e3d0151");
-  src: url("common/fonts/glyphicons.eot?#iefix") format("embedded-opentype"), url("common/fonts/glyphicons.woff?4a54c44721891dcb1880dbd45e3d0151") format("woff"), url("common/fonts/glyphicons.ttf?4a54c44721891dcb1880dbd45e3d0151") format("truetype"), url("common/fonts/glyphicons.svg?4a54c44721891dcb1880dbd45e3d0151#glyphicons") format("svg");
+  src: url("fonts/glyphicons.eot?4a54c44721891dcb1880dbd45e3d0151");
+  src: url("fonts/glyphicons.eot?#iefix") format("embedded-opentype"), url("fonts/glyphicons.woff?4a54c44721891dcb1880dbd45e3d0151") format("woff"), url("fonts/glyphicons.ttf?4a54c44721891dcb1880dbd45e3d0151") format("truetype"), url("fonts/glyphicons.svg?4a54c44721891dcb1880dbd45e3d0151#glyphicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -5777,253 +6024,6 @@ img.thumbnail,
 .angle-right:after {
   border-left-color: #ffffff;
   left: -1px;
-}
-/* ==========================================================================
-   Component: Aniamtion
- ============================================================================ */
-[class*="am-animation-"] {
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: both;
-}
-/* Hide animated element if scrollSpy is used */
-@media screen {
-  .cssanimations [data-am-scrollspy*="animation"] {
-    opacity: 0;
-  }
-}
-/* Fade */
-.animation-fade {
-  animation-name: am-fade;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-}
-/* Scale */
-.animation-scale-up {
-  animation-name: am-scale-up;
-}
-.animation-scale-down {
-  animation-name: am-scale-down;
-}
-/* Slide */
-.animation-slide-top {
-  animation-name: am-slide-top;
-}
-.animation-slide-bottom {
-  animation-name: am-slide-bottom;
-}
-.animation-slide-left {
-  animation-name: am-slide-left;
-}
-.animation-slide-right {
-  animation-name: am-slide-right;
-}
-.animation-slide-top-fixed {
-  animation-name: am-slide-top-fixed;
-}
-/* Shake */
-.animation-shake {
-  animation-name: am-shake;
-}
-/* Spin */
-.animation-spin {
-  animation: am-spin 2s infinite linear;
-}
-/* Spring */
-.animation-left-spring {
-  animation: am-left-spring 0.3s ease-in-out;
-}
-.animation-right-spring {
-  animation: am-right-spring 0.3s ease-in-out;
-}
-.animation-reverse {
-  animation-direction: reverse;
-}
-.animation-paused {
-  animation-play-state: paused !important;
-}
-.animation-delay-1 {
-  animation-delay: 1s;
-}
-.animation-delay-2 {
-  animation-delay: 2s;
-}
-.animation-delay-3 {
-  animation-delay: 3s;
-}
-.animation-delay-4 {
-  animation-delay: 4s;
-}
-.animation-delay-5 {
-  animation-delay: 5s;
-}
-.animation-delay-6 {
-  animation-delay: 6s;
-}
-/* Keyframes
- ============================================================================ */
-/* Fade */
-@keyframes am-fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* Scale up */
-@keyframes am-scale-up {
-  0% {
-    opacity: 0;
-    transform: scale(0.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-/* Scale down */
-@keyframes am-scale-down {
-  0% {
-    opacity: 0;
-    transform: scale(1.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-/* Slide top */
-@keyframes am-slide-top {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Slide bottom */
-@keyframes am-slide-bottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Slide left */
-@keyframes am-slide-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-/* Slide right */
-@keyframes am-slide-right {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-/* Shake */
-@keyframes am-shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  10% {
-    transform: translateX(-9px);
-  }
-  20% {
-    transform: translateX(8px);
-  }
-  30% {
-    transform: translateX(-7px);
-  }
-  40% {
-    transform: translateX(6px);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
-  60% {
-    transform: translateX(4px);
-  }
-  70% {
-    transform: translateX(-3px);
-  }
-  80% {
-    transform: translateX(2px);
-  }
-  90% {
-    transform: translateX(-1px);
-  }
-}
-/* Slide top fixed */
-@keyframes am-slide-top-fixed {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Slide bottom fixed */
-@keyframes am-slide-bottom-fixed {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Spin */
-@keyframes am-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-/* Spring */
-@keyframes am-right-spring {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-20%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes am-left-spring {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(20%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 /* ==========================================================================
    Component: Print

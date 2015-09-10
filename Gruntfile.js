@@ -22,7 +22,7 @@ module.exports = function (grunt) {
       glyphicons: {
         src: './webfonts/vectors/*.svg',
         dest: './public/fonts/',
-        destCss: './less/common/',
+        destCss: './less/',
         options: {
           font: 'glyphicons',
           fontFilename: 'glyphicons',

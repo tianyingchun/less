@@ -28,7 +28,45 @@ app.use(compress());
 // the default is "/" capture the static dir as all static resource root.
 app.use("/static", cors(), express.static(path.join(__dirname, './public')));
 app.use("/examples", cors(), express.static(path.join(__dirname, './examples')));
+// The testing purpose for  `react-sample`
+app.get("/workspace/list", function (req, res) {
+  var initialState = {
+    "workspaces": [{
+      "id": 1,
+      "name": "workspace name 1"
+    }, {
+      "id": 2,
+      "name": "workspace name 2"
+    },
+    {
+      "id": 3,
+      "name": "workspace name 3"
+    },{
+      "id": 4,
+      "name": "workspace name 4"
+    }]
+  };
+  var html = '<!DOCTYPE html>' +
+    ' <html>' +
+    '  <head>' +
+    '  <meta charset="utf-8">' +
+    '  <meta name="renderer" content="webkit">' +
+    '  <meta http-equiv="Cache-Control" content="no-siteapp">' +
+    '  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">' +
+    '  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">' +
+    '  <link rel="stylesheet" type="text/css" href="http://172.16.233.137:3000/public/workspace/wslist/bundle.css">' +
+    '</head>' +
+    '  <body>' +
+    '    <script>window.__INITIAL_STATE__ = ' + JSON.stringify(initialState) + '</script>' +
+    '    <div id="react-view"></div>' +
+    '    <script src="http://172.16.233.137:3000/public/browser-polyfill.js"></script>' +
+    '    <script src="http://172.16.233.137:3000/public/reactkits.js"></script>' +
+    '    <script src="http://172.16.233.137:3000/public/workspace/wslist/bundle.js"></script>' +
+    '  </body>' +
+    '</html>';
 
+  res.send(html);
+});
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('404 Not Found!');

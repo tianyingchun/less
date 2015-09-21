@@ -86,7 +86,7 @@ module.exports = function (grunt) {
       dev: {
         script: './bin/www',
         options: {
-          nodeArgs: ['--debug'],
+          nodeArgs: [/*'--debug'*/],
           env: {
             // require the process.env.NODE_ENV =='development' | 'production'
             NODE_ENV: 'development',

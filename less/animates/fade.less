@@ -1,3 +1,17 @@
+.fade-motion(@className, @keyframeName) {
+  .make-motion(@className, @keyframeName);
+  .@{className}-enter, .@{className}-appear {
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+  .@{className}-leave {
+    animation-timing-function: linear;
+  }
+}
+
+.fade-motion(fade, fade);
+.fade-motion(modal-fade, fade);
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -15,56 +29,3 @@
     opacity: 0;
   }
 }
-
-.fadeIn {
-  animation-name: fadeIn;
-}
-.fadeOut {
-  animation-name: fadeOut;
-}
-.animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-
-/** For react rc-animate component */
-.fade-enter {
-  opacity: 0;
-  .animated;
-  display: block !important;
-  visibility: visible !important;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
-  animation-play-state: paused;
-  //.fade-enter.fade-enter-active
-  &.fade-enter-active {
-    animation-name: fadeIn;
-    animation-play-state: running;
-  }
-}
-
-.fade-appear {
-  opacity: 0;
-  .animated;
-  display: block !important;
-  visibility: visible !important;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
-  animation-play-state: paused;
-  //.fade-appear.fade-appear-active
-  &.fade-appear-active {
-    animation-name: fadeIn;
-    animation-play-state: running;
-  }
-}
-
-.fade-leave {
-  .animated;
-  display: block !important;
-  visibility: visible !important;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
-  animation-play-state: paused;
-  &.fade-leave-active {
-    animation-name: fadeOut;
-    animation-play-state: running;
-  }
-}
-

@@ -3,7 +3,7 @@
  * https://github.com/tianyingchun/less-ui
  * Copyright (c) 2015  tianyingchun@outlook.com
  * The less ui components based on bootstrap/amazeui.
- * built on: Sun Sep 27 2015 10:23:05 GMT+0800 (CST)
+ * built on: Sun Sep 27 2015 23:52:33 GMT+0800 (CST)
  */
 /* ==========================================================================
    Component: Base
@@ -3380,6 +3380,74 @@ fieldset[disabled] .checkbox-inline {
 .pagination-right {
   text-align: right;
 }
+/**
+ * The motion mixin helper methods
+ *
+ */
+.fade-enter,
+.fade-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.fade-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.fade-enter.fade-enter-active,
+.fade-appear.fade-appear-active {
+  animation-name: fadeIn;
+  animation-play-state: running;
+}
+.fade-leave.fade-leave-active {
+  animation-name: fadeOut;
+  animation-play-state: running;
+}
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+  animation-timing-function: linear;
+}
+.fade-leave {
+  animation-timing-function: linear;
+}
+.modal-fade-enter,
+.modal-fade-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.modal-fade-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.modal-fade-enter.modal-fade-enter-active,
+.modal-fade-appear.modal-fade-appear-active {
+  animation-name: fadeIn;
+  animation-play-state: running;
+}
+.modal-fade-leave.modal-fade-leave-active {
+  animation-name: fadeOut;
+  animation-play-state: running;
+}
+.modal-fade-enter,
+.modal-fade-appear {
+  opacity: 0;
+  animation-timing-function: linear;
+}
+.modal-fade-leave {
+  animation-timing-function: linear;
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -3396,54 +3464,548 @@ fieldset[disabled] .checkbox-inline {
     opacity: 0;
   }
 }
-.fadeIn {
-  animation-name: fadeIn;
-}
-.fadeOut {
-  animation-name: fadeOut;
-}
-.animated {
-  animation-duration: 1s;
+.slide-up-enter,
+.slide-up-appear {
+  animation-duration: .3s;
   animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
 }
-/** For react rc-animate component */
-.fade-enter {
+.slide-up-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.slide-up-enter.slide-up-enter-active,
+.slide-up-appear.slide-up-appear-active {
+  animation-name: slideUpIn;
+  animation-play-state: running;
+}
+.slide-up-leave.slide-up-leave-active {
+  animation-name: slideUpOut;
+  animation-play-state: running;
+}
+.slide-up-enter,
+.slide-up-appear {
   opacity: 0;
-  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.slide-up-leave {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+.slide-down-enter,
+.slide-down-appear {
+  animation-duration: .3s;
   animation-fill-mode: both;
   display: block !important;
   visibility: visible !important;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
   animation-play-state: paused;
 }
-.fade-enter.fade-enter-active {
-  animation-name: fadeIn;
+.slide-down-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.slide-down-enter.slide-down-enter-active,
+.slide-down-appear.slide-down-appear-active {
+  animation-name: slideDownIn;
   animation-play-state: running;
 }
-.fade-appear {
+.slide-down-leave.slide-down-leave-active {
+  animation-name: slideDownOut;
+  animation-play-state: running;
+}
+.slide-down-enter,
+.slide-down-appear {
   opacity: 0;
-  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.slide-down-leave {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+.slide-left-enter,
+.slide-left-appear {
+  animation-duration: .3s;
   animation-fill-mode: both;
   display: block !important;
   visibility: visible !important;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
   animation-play-state: paused;
 }
-.fade-appear.fade-appear-active {
-  animation-name: fadeIn;
-  animation-play-state: running;
-}
-.fade-leave {
-  animation-duration: 1s;
+.slide-left-leave {
+  animation-duration: .3s;
   animation-fill-mode: both;
   display: block !important;
   visibility: visible !important;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
   animation-play-state: paused;
 }
-.fade-leave.fade-leave-active {
-  animation-name: fadeOut;
+.slide-left-enter.slide-left-enter-active,
+.slide-left-appear.slide-left-appear-active {
+  animation-name: slideLeftIn;
   animation-play-state: running;
+}
+.slide-left-leave.slide-left-leave-active {
+  animation-name: slideLeftOut;
+  animation-play-state: running;
+}
+.slide-left-enter,
+.slide-left-appear {
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.slide-left-leave {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+.slide-right-enter,
+.slide-right-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.slide-right-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.slide-right-enter.slide-right-enter-active,
+.slide-right-appear.slide-right-appear-active {
+  animation-name: slideRightIn;
+  animation-play-state: running;
+}
+.slide-right-leave.slide-right-leave-active {
+  animation-name: slideRightOut;
+  animation-play-state: running;
+}
+.slide-right-enter,
+.slide-right-appear {
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.slide-right-leave {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+}
+@keyframes slideUpOut {
+  0% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0.8);
+  }
+}
+@keyframes slideDownIn {
+  0% {
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
+  }
+}
+@keyframes slideDownOut {
+  0% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: scaleY(0.8);
+  }
+}
+@keyframes slideLeftIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleX(1);
+  }
+}
+@keyframes slideLeftOut {
+  0% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleX(0.8);
+  }
+}
+@keyframes slideRightIn {
+  0% {
+    opacity: 0;
+    transform-origin: 100% 0%;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 0%;
+    transform: scaleX(1);
+  }
+}
+@keyframes slideRightOut {
+  0% {
+    opacity: 1;
+    transform-origin: 100% 0%;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 100% 0%;
+    transform: scaleX(0.8);
+  }
+}
+.zoom-enter,
+.zoom-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-enter.zoom-enter-active,
+.zoom-appear.zoom-appear-active {
+  animation-name: zoomIn;
+  animation-play-state: running;
+}
+.zoom-leave.zoom-leave-active {
+  animation-name: zoomOut;
+  animation-play-state: running;
+}
+.zoom-enter,
+.zoom-appear {
+  transform: scale(0);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.zoom-leave {
+  animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-big-enter,
+.zoom-big-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-big-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-big-enter.zoom-big-enter-active,
+.zoom-big-appear.zoom-big-appear-active {
+  animation-name: zoomBigIn;
+  animation-play-state: running;
+}
+.zoom-big-leave.zoom-big-leave-active {
+  animation-name: zoomBigOut;
+  animation-play-state: running;
+}
+.zoom-big-enter,
+.zoom-big-appear {
+  transform: scale(0);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.zoom-big-leave {
+  animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-up-enter,
+.zoom-up-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-up-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-up-enter.zoom-up-enter-active,
+.zoom-up-appear.zoom-up-appear-active {
+  animation-name: zoomUpIn;
+  animation-play-state: running;
+}
+.zoom-up-leave.zoom-up-leave-active {
+  animation-name: zoomUpOut;
+  animation-play-state: running;
+}
+.zoom-up-enter,
+.zoom-up-appear {
+  transform: scale(0);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.zoom-up-leave {
+  animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-down-enter,
+.zoom-down-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-down-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-down-enter.zoom-down-enter-active,
+.zoom-down-appear.zoom-down-appear-active {
+  animation-name: zoomDownIn;
+  animation-play-state: running;
+}
+.zoom-down-leave.zoom-down-leave-active {
+  animation-name: zoomDownOut;
+  animation-play-state: running;
+}
+.zoom-down-enter,
+.zoom-down-appear {
+  transform: scale(0);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.zoom-down-leave {
+  animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-left-enter,
+.zoom-left-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-left-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-left-enter.zoom-left-enter-active,
+.zoom-left-appear.zoom-left-appear-active {
+  animation-name: zoomLeftIn;
+  animation-play-state: running;
+}
+.zoom-left-leave.zoom-left-leave-active {
+  animation-name: zoomLeftOut;
+  animation-play-state: running;
+}
+.zoom-left-enter,
+.zoom-left-appear {
+  transform: scale(0);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.zoom-left-leave {
+  animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-right-enter,
+.zoom-right-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-right-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.zoom-right-enter.zoom-right-enter-active,
+.zoom-right-appear.zoom-right-appear-active {
+  animation-name: zoomRightIn;
+  animation-play-state: running;
+}
+.zoom-right-leave.zoom-right-leave-active {
+  animation-name: zoomRightOut;
+  animation-play-state: running;
+}
+.zoom-right-enter,
+.zoom-right-appear {
+  transform: scale(0);
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.zoom-right-leave {
+  animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-tag-leave {
+  animation: zoomOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes zoomBigIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomBigOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@keyframes zoomUpIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 0%;
+    transform: scale(0.8);
+  }
+  100% {
+    transform-origin: 50% 0%;
+    transform: scale(1);
+  }
+}
+@keyframes zoomUpOut {
+  0% {
+    transform-origin: 50% 0%;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 0%;
+    transform: scale(0.8);
+  }
+}
+@keyframes zoomLeftIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 50%;
+    transform: scale(0.8);
+  }
+  100% {
+    transform-origin: 0% 50%;
+    transform: scale(1);
+  }
+}
+@keyframes zoomLeftOut {
+  0% {
+    transform-origin: 0% 50%;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 50%;
+    transform: scale(0.8);
+  }
+}
+@keyframes zoomRightIn {
+  0% {
+    opacity: 0;
+    transform-origin: 100% 50%;
+    transform: scale(0.8);
+  }
+  100% {
+    transform-origin: 100% 50%;
+    transform: scale(1);
+  }
+}
+@keyframes zoomRightOut {
+  0% {
+    transform-origin: 100% 50%;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 100% 50%;
+    transform: scale(0.8);
+  }
+}
+@keyframes zoomDownIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scale(0.8);
+  }
+  100% {
+    transform-origin: 50% 100%;
+    transform: scale(1);
+  }
+}
+@keyframes zoomDownOut {
+  0% {
+    transform-origin: 50% 100%;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scale(0.8);
+  }
 }
 /* ==========================================================================
    Component: Article

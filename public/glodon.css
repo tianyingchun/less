@@ -3,7 +3,7 @@
  * https://github.com/tianyingchun/less-ui
  * Copyright (c) 2015  tianyingchun@outlook.com
  * The less ui components based on bootstrap/amazeui.
- * built on: Mon Sep 28 2015 18:04:30 GMT+0800 (CST)
+ * built on: Mon Sep 28 2015 21:25:57 GMT+0800 (CST)
  */
 /* ==========================================================================
    Component: Base
@@ -3382,7 +3382,7 @@ fieldset[disabled] .checkbox-inline {
 }
 /**
  * The motion mixin helper methods
- *
+ * The animation variables defined in global less `variables.less`.
  */
 .fade-enter,
 .fade-appear {
@@ -4823,8 +4823,8 @@ a.close:hover {
 }
 @font-face {
   font-family: "glyphicons";
-  src: url("fonts/glyphicons.eot?d91ca4c4bb121c352e794968a7c438b2");
-  src: url("fonts/glyphicons.eot?#iefix") format("embedded-opentype"), url("fonts/glyphicons.woff?d91ca4c4bb121c352e794968a7c438b2") format("woff"), url("fonts/glyphicons.ttf?d91ca4c4bb121c352e794968a7c438b2") format("truetype"), url("fonts/glyphicons.svg?d91ca4c4bb121c352e794968a7c438b2#glyphicons") format("svg");
+  src: url("fonts/glyphicons.eot?8f8bf0db2cab100afdae1d53d1a889ba");
+  src: url("fonts/glyphicons.eot?#iefix") format("embedded-opentype"), url("fonts/glyphicons.woff?8f8bf0db2cab100afdae1d53d1a889ba") format("woff"), url("fonts/glyphicons.ttf?8f8bf0db2cab100afdae1d53d1a889ba") format("truetype"), url("fonts/glyphicons.svg?8f8bf0db2cab100afdae1d53d1a889ba#glyphicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -4848,116 +4848,125 @@ a.close:hover {
 .glyph-bubble2:before {
   content: "\f102";
 }
-.glyph-checkbox-checked:before {
+.glyph-cancel-circle:before {
   content: "\f103";
 }
-.glyph-checkbox-unchecked:before {
+.glyph-checkbox-checked:before {
   content: "\f104";
 }
-.glyph-circle-down:before {
+.glyph-checkbox-unchecked:before {
   content: "\f105";
 }
-.glyph-circle-left:before {
+.glyph-circle-down:before {
   content: "\f106";
 }
-.glyph-circle-right:before {
+.glyph-circle-left:before {
   content: "\f107";
 }
-.glyph-circle-up:before {
+.glyph-circle-right:before {
   content: "\f108";
 }
-.glyph-coin-dollar:before {
+.glyph-circle-up:before {
   content: "\f109";
 }
-.glyph-coin-euro:before {
+.glyph-coin-dollar:before {
   content: "\f10a";
 }
-.glyph-coin-pound:before {
+.glyph-coin-euro:before {
   content: "\f10b";
 }
-.glyph-coin-yen:before {
+.glyph-coin-pound:before {
   content: "\f10c";
 }
-.glyph-facebook3:before {
+.glyph-coin-yen:before {
   content: "\f10d";
 }
-.glyph-feed2:before {
+.glyph-facebook3:before {
   content: "\f10e";
 }
-.glyph-feed3:before {
+.glyph-feed2:before {
   content: "\f10f";
 }
-.glyph-feed4:before {
+.glyph-feed3:before {
   content: "\f110";
 }
-.glyph-google-plus3:before {
+.glyph-feed4:before {
   content: "\f111";
 }
-.glyph-hour-glass:before {
+.glyph-google-plus3:before {
   content: "\f112";
 }
-.glyph-mail4:before {
+.glyph-hour-glass:before {
   content: "\f113";
 }
-.glyph-radio-checked2:before {
+.glyph-mail4:before {
   content: "\f114";
 }
-.glyph-radio-unchecked:before {
+.glyph-notification:before {
   content: "\f115";
 }
-.glyph-search:before {
+.glyph-radio-checked:before {
   content: "\f116";
 }
-.glyph-share2:before {
+.glyph-radio-checked2:before {
   content: "\f117";
 }
-.glyph-spinner:before {
+.glyph-radio-unchecked:before {
   content: "\f118";
 }
-.glyph-spinner10:before {
+.glyph-search:before {
   content: "\f119";
 }
-.glyph-spinner11:before {
+.glyph-share2:before {
   content: "\f11a";
 }
-.glyph-spinner2:before {
+.glyph-spinner:before {
   content: "\f11b";
 }
-.glyph-spinner3:before {
+.glyph-spinner10:before {
   content: "\f11c";
 }
-.glyph-spinner4:before {
+.glyph-spinner11:before {
   content: "\f11d";
 }
-.glyph-spinner5:before {
+.glyph-spinner2:before {
   content: "\f11e";
 }
-.glyph-spinner6:before {
+.glyph-spinner3:before {
   content: "\f11f";
 }
-.glyph-spinner7:before {
+.glyph-spinner4:before {
   content: "\f120";
 }
-.glyph-spinner8:before {
+.glyph-spinner5:before {
   content: "\f121";
 }
-.glyph-spinner9:before {
+.glyph-spinner6:before {
   content: "\f122";
 }
-.glyph-star-empty:before {
+.glyph-spinner7:before {
   content: "\f123";
 }
-.glyph-star-full:before {
+.glyph-spinner8:before {
   content: "\f124";
 }
-.glyph-star-half:before {
+.glyph-spinner9:before {
   content: "\f125";
 }
-.glyph-twitter3:before {
+.glyph-star-empty:before {
   content: "\f126";
 }
-.glyph-youtube4:before {
+.glyph-star-full:before {
   content: "\f127";
+}
+.glyph-star-half:before {
+  content: "\f128";
+}
+.glyph-twitter3:before {
+  content: "\f129";
+}
+.glyph-youtube4:before {
+  content: "\f12a";
 }
 /* ==========================================================================
    Component: Icon

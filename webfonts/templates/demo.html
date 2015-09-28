@@ -103,8 +103,15 @@
             document.getElementById('icons').onclick = function(e) {
               e = e || window.event;
               var name = e.target.getAttribute('data-name') || e.target.parentNode.getAttribute('data-name');
-              document.getElementById('name').innerHTML = name;
-              document.getElementById('name2').innerHTML = name;
+              var _name = document.getElementById('name');
+              var _name2 = document.getElementById('name2');
+
+              if (_name) {
+                _name.innerHTML = name;
+              }
+              if (_name2) {
+                _name2.innerHTML = name;
+              }
             }
           })();
           </script>

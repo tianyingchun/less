@@ -3,7 +3,7 @@
  * https://github.com/tianyingchun/less-ui
  * Copyright (c) 2015  tianyingchun@outlook.com
  * The less ui components based on bootstrap/amazeui.
- * built on: Sun Sep 27 2015 23:52:33 GMT+0800 (CST)
+ * built on: Mon Sep 28 2015 18:04:30 GMT+0800 (CST)
  */
 /* ==========================================================================
    Component: Base
@@ -3688,6 +3688,230 @@ fieldset[disabled] .checkbox-inline {
     transform: scaleX(0.8);
   }
 }
+.move-up-enter,
+.move-up-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-up-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-up-enter.move-up-enter-active,
+.move-up-appear.move-up-appear-active {
+  animation-name: moveUpIn;
+  animation-play-state: running;
+}
+.move-up-leave.move-up-leave-active {
+  animation-name: moveUpOut;
+  animation-play-state: running;
+}
+.move-up-enter,
+.move-up-appear {
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.move-up-leave {
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+.move-down-enter,
+.move-down-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-down-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-down-enter.move-down-enter-active,
+.move-down-appear.move-down-appear-active {
+  animation-name: moveDownIn;
+  animation-play-state: running;
+}
+.move-down-leave.move-down-leave-active {
+  animation-name: moveDownOut;
+  animation-play-state: running;
+}
+.move-down-enter,
+.move-down-appear {
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.move-down-leave {
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+.move-left-enter,
+.move-left-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-left-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-left-enter.move-left-enter-active,
+.move-left-appear.move-left-appear-active {
+  animation-name: moveLeftIn;
+  animation-play-state: running;
+}
+.move-left-leave.move-left-leave-active {
+  animation-name: moveLeftOut;
+  animation-play-state: running;
+}
+.move-left-enter,
+.move-left-appear {
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.move-left-leave {
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+.move-right-enter,
+.move-right-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-right-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  visibility: visible !important;
+  animation-play-state: paused;
+}
+.move-right-enter.move-right-enter-active,
+.move-right-appear.move-right-appear-active {
+  animation-name: moveRightIn;
+  animation-play-state: running;
+}
+.move-right-leave.move-right-leave-active {
+  animation-name: moveRightOut;
+  animation-play-state: running;
+}
+.move-right-enter,
+.move-right-appear {
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+.move-right-leave {
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+@keyframes moveDownIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes moveDownOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@keyframes moveLeftIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes moveLeftOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes moveRightIn {
+  0% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateX(0%);
+  }
+}
+@keyframes moveRightOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes moveUpIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes moveUpOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
 .zoom-enter,
 .zoom-appear {
   animation-duration: .3s;
@@ -4599,8 +4823,8 @@ a.close:hover {
 }
 @font-face {
   font-family: "glyphicons";
-  src: url("fonts/glyphicons.eot?f0f75a17f49c017204c76a97339c9caa");
-  src: url("fonts/glyphicons.eot?#iefix") format("embedded-opentype"), url("fonts/glyphicons.woff?f0f75a17f49c017204c76a97339c9caa") format("woff"), url("fonts/glyphicons.ttf?f0f75a17f49c017204c76a97339c9caa") format("truetype"), url("fonts/glyphicons.svg?f0f75a17f49c017204c76a97339c9caa#glyphicons") format("svg");
+  src: url("fonts/glyphicons.eot?d91ca4c4bb121c352e794968a7c438b2");
+  src: url("fonts/glyphicons.eot?#iefix") format("embedded-opentype"), url("fonts/glyphicons.woff?d91ca4c4bb121c352e794968a7c438b2") format("woff"), url("fonts/glyphicons.ttf?d91ca4c4bb121c352e794968a7c438b2") format("truetype"), url("fonts/glyphicons.svg?d91ca4c4bb121c352e794968a7c438b2#glyphicons") format("svg");
   font-weight: normal;
   font-style: normal;
 }

@@ -1,0 +1,40 @@
+/**
+ * The mixins for widget components
+ */
+.glyphicon-mixin() {
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
+
+  &:before {
+    display: block;
+    font-family: "glyphicons" !important;
+  }
+}
+
+
+// input status
+// == when focus or actived
+.active(@color: @input-border-focus) {
+  border-color: tint(@color, 20%);
+  outline: 0;
+  box-shadow: 0 0 0 2px tint(@color, 80%);
+}
+
+// == when hoverd
+.hover(@color: @input-border-focus ) {
+  border-color: tint(@color, 20%);
+}
+
+.disabled() {
+  background-color: @input-bg-disabled;
+  opacity: 1;
+  cursor: @cursor-disabled;
+  &:hover {
+    .hover(@input-border-focus);
+  }
+}

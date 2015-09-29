@@ -28,6 +28,7 @@ module.exports = function (grunt) {
           fontFilename: 'glyphicons',
           types: 'eot,woff,ttf,svg',
           syntax: 'bem',
+          template: './webfonts/templates/bem.css',
           htmlDemo: true,
           htmlDemoTemplate: './webfonts/templates/demo.html',
           destHtml: './public/',

@@ -50,7 +50,8 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          "./public/glodon.css": "./less/bootstrap.basic.less"
+          "./public/themes/glodon-yun/common.css": "./less/themes/glodon-yun/customui.less",
+          "./public/common.css": "./less/bootstrap.basic.less"
         }
       },
       prod: {
@@ -79,7 +80,8 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          "./public/glodon.min.css": "./less/bootstrap.basic.less"
+          "./public/themes/glodon-yun/common.min.css": "./less/themes/glodon-yun/customui.less",
+          "./public/common.min.css": "./less/bootstrap.basic.less"
         }
       }
     },

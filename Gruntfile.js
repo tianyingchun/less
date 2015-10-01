@@ -22,7 +22,7 @@ module.exports = function (grunt) {
       glyphicons: {
         src: './webfonts/vectors/*.svg',
         dest: './public/fonts/',
-        destCss: './less/',
+        destCss: './core/',
         options: {
           font: 'glyphicons',
           fontFilename: 'glyphicons',
@@ -44,14 +44,14 @@ module.exports = function (grunt) {
     },
     less: {
       options: {
-        paths: ["./less"],
+        paths: ["./core"],
         banner: '<%= banner%>',
         relativeUrls: true
       },
       dev: {
         files: {
-          "./public/themes/glodon-yun/common.css": "./less/themes/glodon-yun/customui.less",
-          "./public/common.css": "./less/bootstrap.basic.less"
+          "./public/themes/glodon-yun/common.css": "./themes/glodon-yun/customui.less",
+          "./public/common.css": "./core/bootstrap.basic.less"
         }
       },
       prod: {
@@ -80,8 +80,8 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          "./public/themes/glodon-yun/common.min.css": "./less/themes/glodon-yun/customui.less",
-          "./public/common.min.css": "./less/bootstrap.basic.less"
+          "./public/themes/glodon-yun/common.min.css": "./themes/glodon-yun/customui.less",
+          "./public/common.min.css": "./core/bootstrap.basic.less"
         }
       }
     },

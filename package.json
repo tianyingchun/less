@@ -1,8 +1,8 @@
 {
-  "name": "less-ui",
+  "name": "less",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/tianyingchun/less-ui",
+  "homepage": "https://github.com/tianyingchun/less",
   "description": "The less ui components based on bootstrap/amazeui.",
   "scripts": {
     "start": "node ./bin/www",

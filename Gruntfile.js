@@ -33,7 +33,9 @@ module.exports = function (grunt) {
           htmlDemoTemplate: './webfonts/templates/demo.html',
           destHtml: './public/',
           stylesheet: 'less',
-          relativeFontPath: './fonts',
+          // cause of the glyphicons.less will copy to ./core/ so, the replace path is
+          // ../public/fonts
+          relativeFontPath: '../public/fonts',
           templateOptions: {
             baseClass: 'glyph-icon',
             classPrefix: 'glyph-',
@@ -50,7 +52,7 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          "./public/themes/glodon-yun/common.css": "./themes/glodon-yun/customui.less",
+          "./public/themes/glodon-yun/common.css": "./core/themes/glodon-yun/customui.less",
           "./public/common.css": "./core/bootstrap.basic.less"
         }
       },
@@ -80,7 +82,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          "./public/themes/glodon-yun/common.min.css": "./themes/glodon-yun/customui.less",
+          "./public/themes/glodon-yun/common.min.css": "./core/themes/glodon-yun/customui.less",
           "./public/common.min.css": "./core/bootstrap.basic.less"
         }
       }

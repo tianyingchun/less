@@ -3,7 +3,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   var banner = [
-    '/*!',
+    '/*',
     ' * <%= pkg.name %> <%= pkg.version %>',
     ' * <%= pkg.homepage %>',
     ' * Copyright (c) 2015  tianyingchun@outlook.com',
@@ -53,6 +53,7 @@ module.exports = function (grunt) {
       dev: {
         files: {
           "./public/themes/glodon-yun/common.css": "./core/themes/glodon-yun/customui.less",
+          "./public/themes/tongcheng-pc/common.css": "./core/themes/tongcheng-pc/customui.less",
           "./public/common.css": "./core/bootstrap.basic.less"
         }
       },
@@ -83,6 +84,7 @@ module.exports = function (grunt) {
         },
         files: {
           "./public/themes/glodon-yun/common.min.css": "./core/themes/glodon-yun/customui.less",
+          "./public/themes/tongcheng-pc/common.min.css": "./core/themes/tongcheng-pc/customui.less",
           "./public/common.min.css": "./core/bootstrap.basic.less"
         }
       }

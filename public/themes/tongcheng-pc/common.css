@@ -3,7 +3,7 @@
  * https://github.com/tianyingchun/less
  * Copyright (c) 2015  tianyingchun@outlook.com
  * The less ui components based on bootstrap/amazeui.
- * built on: Sun Oct 18 2015 18:39:25 GMT+0800 (CST)
+ * built on: Thu Oct 22 2015 16:31:15 GMT+0800 (CST)
  */
 /**
  * The mixins for widget components
@@ -2341,92 +2341,6 @@ fieldset[disabled] .checkbox-inline {
 }
 .breadcrumb-slash > li + li:before {
   content: "/\00a0";
-}
-/* ==========================================================================
-   Component: Pagination
- ============================================================================ */
-.pagination {
-  padding-left: 0;
-  margin: 1.5rem 0;
-  list-style: none;
-  color: #999999;
-  text-align: left;
-}
-.pagination:before,
-.pagination:after {
-  content: " ";
-  display: table;
-}
-.pagination:after {
-  clear: both;
-}
-.pagination > li {
-  display: inline-block;
-}
-.pagination > li > a,
-.pagination > li > span {
-  position: relative;
-  display: block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  line-height: 1.2;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 0;
-  margin-bottom: 5px;
-  margin-right: 5px;
-}
-.pagination > li:last-child > a,
-.pagination > li:last-child > span {
-  margin-right: 0;
-}
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
-  background-color: #eeeeee;
-}
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  z-index: 2;
-  color: #ffffff;
-  background-color: #0e90d2;
-  border-color: #0e90d2;
-  cursor: default;
-}
-.pagination > .disabled > span,
-.pagination > .disabled > span:hover,
-.pagination > .disabled > span:focus,
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover,
-.pagination > .disabled > a:focus {
-  color: #999999;
-  background-color: #ffffff;
-  border-color: #dddddd;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-.pagination .pagination-prev {
-  float: left;
-}
-.pagination .pagination-prev a {
-  border-radius: 0;
-}
-.pagination .pagination-next {
-  float: right;
-}
-.pagination .pagination-next a {
-  border-radius: 0;
-}
-.pagination-centered {
-  text-align: center;
-}
-.pagination-right {
-  text-align: right;
 }
 /**
  * The motion mixin helper methods

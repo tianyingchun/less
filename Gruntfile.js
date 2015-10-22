@@ -52,8 +52,7 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          "./public/themes/glodon-yun/common.css": "./core/themes/glodon-yun/customui.less",
-          "./public/themes/tongcheng-pc/common.css": "./core/themes/tongcheng-pc/customui.less",
+          "./public/themes/jr-pc/common.css": "./core/themes/jr-pc/customui.less",
           "./public/common.css": "./core/bootstrap.basic.less"
         }
       },
@@ -83,8 +82,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          "./public/themes/glodon-yun/common.min.css": "./core/themes/glodon-yun/customui.less",
-          "./public/themes/tongcheng-pc/common.min.css": "./core/themes/tongcheng-pc/customui.less",
+          "./public/themes/jr-pc/common.min.css": "./core/themes/jr-pc/customui.less",
           "./public/common.min.css": "./core/bootstrap.basic.less"
         }
       }
